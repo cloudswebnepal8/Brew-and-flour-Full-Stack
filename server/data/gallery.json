@@ -1,0 +1,11 @@
+[
+  { "id": 1, "category": "coffee", "title": "The Latte Pour", "img": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" },
+  { "id": 2, "category": "bakery", "title": "Morning Croissants", "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" },
+  { "id": 3, "category": "interior", "title": "The Dining Room", "img": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80" },
+  { "id": 4, "category": "coffee", "title": "Salted Caramel Iced Latte", "img": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600&q=80" },
+  { "id": 5, "category": "bakery", "title": "Blueberry Cheesecake", "img": "https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&q=80" },
+  { "id": 6, "category": "interior", "title": "The Espresso Bar Counter", "img": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" },
+  { "id": 7, "category": "interior", "title": "Café Signage", "img": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80" },
+  { "id": 8, "category": "bakery", "title": "Flaky Layers", "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" },
+  { "id": 9, "category": "coffee", "title": "Caramel Latte", "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" }
+]
