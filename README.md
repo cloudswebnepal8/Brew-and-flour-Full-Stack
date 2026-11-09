@@ -22,12 +22,13 @@ cp .env.example .env   # then edit .env with your real MongoDB URI and a strong 
 
 Make sure MongoDB is running locally, or use a MongoDB Atlas connection string in `MONGO_URI`.
 
-Create the first admin account:
+Set a unique `INITIAL_ADMIN_PASSWORD` (at least 12 characters) in `server/.env`,
+then create the first admin account:
 ```bash
 node seed.js
 ```
-This creates `admin@abcacademy.com` / `ChangeMe123!` — log in once and change the password
-by adding a "change password" route, or update it directly in the database.
+This creates `admin@abcacademy.com`; the initial password is read from the
+private environment file and is never printed by the seed script.
 
 Start the API:
 ```bash
@@ -66,6 +67,7 @@ Drop your real images into `client/public/`:
 - Only an admin can create new teacher/admin accounts (`POST /api/auth/register`, admin-only).
 - Both teachers and admins can post notices/events/gallery images; only admins can delete them.
 - JWT is stored in `localStorage` (`abc_user`) on the frontend via `AuthContext.jsx`.
+- Contact form enquiries are saved to MongoDB and appear in the admin dashboard inbox.
 
 ## 5. Next steps you'll likely want
 

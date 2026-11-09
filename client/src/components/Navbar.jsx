@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className="header-actions">
             {user ? (
               <>
-                {user.role === "admin" && <Link to="/admin/dashboard">Dashboard</Link>}
+                <Link to="/admin/dashboard">Dashboard</Link>
                 <button onClick={logout}>Logout</button>
               </>
             ) : (
@@ -79,9 +79,7 @@ export default function Navbar() {
             <div className="menu-actions">
               {user ? (
                 <>
-                  {user.role === "admin" && (
-                    <Link to="/admin/dashboard" onClick={closeMenu}>Admin Dashboard</Link>
-                  )}
+                  <Link to="/admin/dashboard" onClick={closeMenu}>Dashboard</Link>
                   <button onClick={() => { logout(); closeMenu(); }}>Logout</button>
                 </>
               ) : (

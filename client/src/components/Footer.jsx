@@ -7,9 +7,8 @@ export default function Footer() {
         <div>
           <h3>ABC Academy</h3>
           <p>A welcoming place to learn, grow, and belong.</p>
-          <p>Address: ABC Street, Murshidabad, 742304</p>
-          <p>Phone: +91 XXXXX XXXXX</p>
-          <p>Email: info@abcacademy.com</p>
+          <p>ABC Street, Murshidabad, West Bengal 742304</p>
+          <p><a href="mailto:info@abcacademy.com">info@abcacademy.com</a></p>
         </div>
         <div>
           <h3>Quick Links</h3>
@@ -21,7 +20,7 @@ export default function Footer() {
         <div>
           <h3>Here to help</h3>
           <p>Questions about ABC Academy?</p>
-          <p><Link to="/contact">Get in touch with our team</Link></p>
+          <p><Link to="/contact">Get in touch with our team →</Link></p>
         </div>
       </div>
       <div className="footer-credit">

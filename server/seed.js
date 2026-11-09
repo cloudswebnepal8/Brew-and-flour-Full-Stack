@@ -19,13 +19,17 @@ const run = async () => {
   if (exists) {
     console.log("Admin already exists:", email);
   } else {
+    const initialPassword = process.env.INITIAL_ADMIN_PASSWORD;
+    if (!initialPassword || initialPassword.length < 12) {
+      throw new Error("Set INITIAL_ADMIN_PASSWORD to a unique password with at least 12 characters.");
+    }
     await User.create({
       name: "Head Admin",
       email,
-      password: "ChangeMe123!", // change immediately after first login
+      password: initialPassword,
       role: "admin",
     });
-    console.log("Admin created:", email, "/ password: ChangeMe123!");
+    console.log("Admin created:", email);
   }
 
   await mongoose.disconnect();

@@ -29,3 +29,12 @@ To create the initial admin account after the database is available:
 ```powershell
 node seed.js
 ```
+
+Before running the seed script, set `INITIAL_ADMIN_PASSWORD` in `.env` to a
+unique password of at least 12 characters. The seed script will not create a
+known default password. Keep `.env` private and change the initial password
+using your organization's account-management process after setup.
+
+Website enquiries submitted from the Contact page are stored in MongoDB and
+visible to admins in the Dashboard inbox. Configure the school’s real contact
+details in the client before deployment.

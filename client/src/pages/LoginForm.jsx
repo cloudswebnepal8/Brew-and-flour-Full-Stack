@@ -29,11 +29,15 @@ export default function LoginForm({ role }) {
   return (
     <div className="login-page">
       <form className="login-form" onSubmit={submit}>
+        <p className="eyebrow">ABC Academy staff portal</p>
         <h2>{role === "admin" ? "Admin Login" : "Teacher Login"}</h2>
-        {error && <p className="form-error">{error}</p>}
+        <p>Sign in with the account provided by your school administrator.</p>
+        {error && <p className="form-error" role="alert">{error}</p>}
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Email address"
+          aria-label="Email address"
+          autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -41,6 +45,8 @@ export default function LoginForm({ role }) {
         <input
           type="password"
           placeholder="Password"
+          aria-label="Password"
+          autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

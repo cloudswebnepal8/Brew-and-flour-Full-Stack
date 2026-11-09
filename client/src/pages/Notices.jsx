@@ -5,6 +5,7 @@ export default function Notices() {
   const [notices, setNotices] = useState([]);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     Promise.all([api.get("/notices"), api.get("/events")])
@@ -12,6 +13,7 @@ export default function Notices() {
         setNotices(n.data);
         setEvents(e.data);
       })
+      .catch(() => setError("Notices and events are temporarily unavailable. Please try again later."))
       .finally(() => setLoading(false));
   }, []);
 
@@ -25,11 +27,17 @@ export default function Notices() {
 
   return (
     <div className="notices-page">
+      <header className="page-heading notices-heading">
+        <p className="eyebrow">Stay up to date</p>
+        <h1>Notices &amp; events</h1>
+        <p>School updates, important dates, and moments worth celebrating.</p>
+      </header>
+      {error && <p className="form-error notices-error" role="alert">{error}</p>}
       <div className="notice-board-col">
         <h2>Notice Board</h2>
         <div className="board">
           {loading && <p>Loading notices…</p>}
-          {!loading && notices.length === 0 && <p>No notices posted yet.</p>}
+          {!loading && !error && notices.length === 0 && <p>No notices posted yet.</p>}
           {notices.map((n) => {
             const { day, month } = formatDate(n.date);
             return (
@@ -47,6 +55,7 @@ export default function Notices() {
 
       <div className="events-col">
         <h2>Events &amp; Achievements</h2>
+        {!loading && !error && events.length === 0 && <p>New school events will be shared here.</p>}
         {events.map((e) => (
           <div
             key={e._id}

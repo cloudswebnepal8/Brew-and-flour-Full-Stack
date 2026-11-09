@@ -9,6 +9,7 @@ const noticeRoutes = require("./routes/noticeRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const galleryRoutes = require("./routes/galleryRoutes");
 const testimonialRoutes = require("./routes/testimonialRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL || "*" }));
@@ -21,6 +22,7 @@ app.use("/api/notices", noticeRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/contact", contactRoutes);
 
 // Fallback error handler
 app.use((err, req, res, next) => {
